@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morada do Axé - Artigos Religiosos</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #8B9A7B; /* Fundo verde terra */
+            color: #333;
+        }
+        /* Cores personalizadas para um toque espiritual e artesanal em tons de verde */
+        .primary-accent {
+            background-color: #4A7C59; /* Verde terroso para acentos */
+        }
+        .primary-accent-dark {
+            background-color: #3A6C49; /* Verde mais escuro para hover */
+        }
+        .text-primary-accent {
+            color: #4A7C59;
+        }
+        .border-light-green {
+            border-color: #D9E6D9; /* Um tom de verde claro para bordas */
+        }
+        .bg-moss-green {
+            background-color: #A0A891; /* Verde musgo para áreas que eram brancas/cinzentas */
+        }
+        .text-dark-gray {
+            color: #2d3748; /* Para texto que precisa de contraste no verde musgo */
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #4A7C59; /* Cor do spinner */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2d3748; /* Cor do título */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 70%;
+            height: 4px;
+            background-color: #D9E6D9; /* Cor da linha sob o título */
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navbar -->
+    <nav class="bg-moss-green shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-primary-accent">Morada do Axé</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-dark-gray hover:text-primary-accent px-3 py-2 rounded-md text-lg font-medium transition duration-200">Início</a>
+                    <a href="#about" class="text-dark-gray hover:text-primary-accent px-3 py-2 rounded-md text-lg font-medium transition duration-200">Sobre Nós</a>
+                    <a href="#how-we-work" class="text-dark-gray hover:text-primary-accent px-3 py-2 rounded-md text-lg font-medium transition duration-200">Como Trabalhamos</a>
+                    <a href="#products" class="text-dark-gray hover:text-primary-accent px-3 py-2 rounded-md text-lg font-medium transition duration-200">Produtos</a>
+                    <a href="#prayer-generator" class="text-dark-gray hover:text-primary-accent px-3 py-2 rounded-md text-lg font-medium transition duration-200">Gerador de Orações</a>
+                    <a href="#contact" class="text-dark-gray hover:text-primary-accent px-3 py-2 rounded-md text-lg font-medium transition duration-200">Contacto</a>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-600 hover:text-white hover:bg-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-200">Início</a>
+                <a href="#about" class="text-gray-600 hover:text-white hover:bg-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-200">Sobre Nós</a>
+                <a href="#how-we-work" class="text-gray-600 hover:text-white hover:bg-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-200">Como Trabalhamos</a>
+                <a href="#products" class="text-gray-600 hover:text-white hover:bg-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-200">Produtos</a>
+                <a href="#prayer-generator" class="text-gray-600 hover:text-white hover:bg-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-200">Gerador de Orações</a>
+                <a href="#contact" class="text-gray-600 hover:text-white hover:bg-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-200">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8 mt-16">
+        <!-- Secção de Início/Hero -->
+        <section id="home" class="w-full max-w-4xl bg-moss-green shadow-lg rounded-xl p-8 mb-12 border border-light-green text-center">
+            <h1 class="text-5xl font-extrabold text-dark-gray mb-4">MORADA DO AXÉ</h1>
+            <p class="text-dark-gray text-xl mb-6">ARTIGOS RELIGIOSOS</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="md:w-1/2">
+                    <!-- Imagem de Juliana Barros - Use um URL direto aqui -->
+                    <img src="https://i.imgur.com/O6UcZOy.jpeg" alt="Foto de Juliana Barros" class="rounded-full mx-auto shadow-md mb-4 w-48 h-48 object-cover">
+                    <h2 class="text-3xl font-bold text-dark-gray mb-2">OLÁ! ME CHAMO JULIANA!</h2>
+                    <p class="text-dark-gray leading-relaxed">Juliana Chagas tem 20 anos, é artista teatral, escritora e artesã. Nascida em São Paulo, Brasil em 2005, a garotinha sonhava em se tornar artista igual ao seu Avô, desde então segue o seu sonho de transformar o AMOR, em ARTE.</p>
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <p class="text-dark-gray italic border-l-4 border-primary-accent pl-4">"Prazer, me chamo Juliana Chagas, sou artesã e criadora da loja "Morada do axé". Meu trabalho são feitos 100% a mão, bem detalhados, feitos com calma, tendo o principal objetivo de trazer o amor do sagrado para perto de nós."</p>
+                    <p class="text-dark-gray mt-2">- Juliana Chagas</p>
+                    <p class="text-dark-gray mt-4">No final de 2023 criou sua loja virtual de artigos religiosos, criados em formato artesanal. A criadora diz que os principais objetivos destas criações é transmitir o amor do sagrado para o mundo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção Sobre Nós -->
+        <section id="about" class="w-full max-w-4xl bg-moss-green shadow-lg rounded-xl p-8 mb-12 border border-light-green text-center">
+            <h2 class="section-title">O QUE É A MORADA DO AXÉ?</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/400x300/A0A891/4A7C59?text=Árvore+da+Vida" alt="Imagem de uma árvore" class="rounded-lg shadow-md mb-4 mx-auto">
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <p class="text-dark-gray leading-relaxed mb-4">A "Morada do axé" foi criada no final de 2023 por Juliana Chagas.</p>
+                    <p class="text-dark-gray leading-relaxed mb-4">Peças feitas com a ajuda dos espíritos, são produtos de excelentes custo benefícios para que todos possam ter o amor de Deus nos seus lares.</p>
+                    <p class="text-dark-gray leading-relaxed">São peças de alta qualidade, além de serem leves, com diferentes tamanhos, ajudando assim aqueles que não possuem tantos espaços.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção Como Trabalhamos -->
+        <section id="how-we-work" class="w-full max-w-4xl bg-moss-green shadow-lg rounded-xl p-8 mb-12 border border-light-green text-center">
+            <h2 class="section-title">COMO TRABALHAMOS?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="bg-moss-green p-6 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-4xl font-bold text-primary-accent block mb-2">01</span>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Me conecto ao sagrado.</h3>
+                    <p class="text-dark-gray">A primeira coisa que faço é pedir auxílio dos seres de luz para poder confeccionar todas as peças.</p>
+                </div>
+                <div class="bg-moss-green p-6 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-4xl font-bold text-primary-accent block mb-2">02</span>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Acender vela</h3>
+                    <p class="text-dark-gray">Essa parte é a mais importante, pois me conecto com a espiritualidade, trazendo a força do divino para as minhas mãos e o axé para as peças.</p>
+                </div>
+                <div class="bg-moss-green p-6 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-4xl font-bold text-primary-accent block mb-2">03</span>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Defumação do ambiente</h3>
+                    <p class="text-dark-gray">A defumação tem o principal objetivo de trazer a paz para o ambiente, fazendo com que o produto seja feito com mais amor e proteção do Criador.</p>
+                </div>
+                <div class="bg-moss-green p-6 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-4xl font-bold text-primary-accent block mb-2">04</span>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Preparo das peças</h3>
+                    <p class="text-dark-gray">Todas as peças são criadas intuitivamente, e feitas a mão.</p>
+                </div>
+                <div class="bg-moss-green p-6 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-4xl font-bold text-primary-accent block mb-2">05</span>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Agradecimento</h3>
+                    <p class="text-dark-gray">Agradeço pela ajuda e honra em fazer as peças, finalizo com uma oração.</p>
+                </div>
+                <div class="bg-moss-green p-6 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-4xl font-bold text-primary-accent block mb-2">06</span>
+                    <h3 class="text-xl font-semibold text-dark-gray mb-2">Divulgação</h3>
+                    <p class="text-dark-gray">É o momento de mostrar o amor de Deus em forma de trabalhos artesanais, é mostrado por fotos e vídeo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Produtos -->
+        <section id="products" class="w-full max-w-4xl bg-moss-green shadow-lg rounded-xl p-8 mb-12 border border-light-green text-center">
+            <h2 class="section-title">VEJA A SEGUIR NOSSOS PRODUTOS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Produto: Jardim Encantado -->
+                <div class="bg-moss-green shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200">
+                    <img src="https://placehold.co/600x400/A0A891/4A7C59?text=Jardim+Encantado" alt="Imagem do Jardim Encantado com Cosme e Damião" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-2">Jardim Encantado - Cosme & Damião</h3>
+                        <p class="text-dark-gray mb-4 text-sm">Confeccionado com a força das crianças encantadas, trazendo a doçura da infância e o amor dos Erês. Produzido com axé e muita dedicação. Duração de 72h. Feito com imagem em gesso, bolacha de madeira, castiçal em gesso e doces em resina e pintura acrílica e verniz.</p>
+                        <a href="#" class="inline-block primary-accent text-white px-6 py-2 rounded-lg font-medium hover:primary-accent-dark transition duration-200">Ver Produto</a>
+                    </div>
+                </div>
+
+                <!-- Produto: Quadros da Fé -->
+                <div class="bg-moss-green shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200">
+                    <img src="https://placehold.co/600x400/A0A891/4A7C59?text=Quadros+da+Fé" alt="Imagem de Quadros da Fé" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-2">Quadros da Fé</h3>
+                        <p class="text-dark-gray mb-4 text-sm">Confeccionados com a intenção de transmitir o amor do sagrado em obras primas. Duração de 48h. Confeccionados à mão e em desenhos pintados de nossos amados espíritos de luz. Feitos com bolacha de madeira 11cm, tinta acrílica e finalizado em verniz.</p>
+                        <a href="#" class="inline-block primary-accent text-white px-6 py-2 rounded-lg font-medium hover:primary-accent-dark transition duration-200">Ver Produto</a>
+                    </div>
+                </div>
+
+                <!-- Produto: Casa dos Pretos Velhos -->
+                <div class="bg-moss-green shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200">
+                    <img src="https://placehold.co/600x400/A0A891/4A7C59?text=Casa+Pretos+Velhos" alt="Imagem da Casa dos Pretos Velhos" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-2">Casa dos Pretos Velhos</h3>
+                        <p class="text-dark-gray mb-4 text-sm">Confeccionado com a força dos ancestrais, trazendo o axé para perto de você. Duração de 72h. Veio para trazer a paz dos vovôs e o amor, cuidando de nós a qualquer hora e lugar. Feito com imagem 3D, casa em MDF, pintura em acrílico, cafés em cerâmica fria e verniz.</p>
+                        <a href="#" class="inline-block primary-accent text-white px-6 py-2 rounded-lg font-medium hover:primary-accent-dark transition duration-200">Ver Produto</a>
+                    </div>
+                </div>
+
+                <!-- Produto: Chapéus dos Malandros -->
+                <div class="bg-moss-green shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200">
+                    <img src="https://placehold.co/600x400/A0A891/4A7C59?text=Chapéus+Malandros" alt="Imagem de Chapéus dos Malandros" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-2">Chapéus dos Malandros</h3>
+                        <p class="text-dark-gray mb-4 text-sm">Os chapéus das malandras servem como instrumentos de trabalho neste plano e no plano astral. Criado com chapéu em poliéster com formato respirável, com flores feitas em cetim e baralhos premium (Maria Navalha) ou cetim (Zé Pelintra).</p>
+                        <a href="#" class="inline-block primary-accent text-white px-6 py-2 rounded-lg font-medium hover:primary-accent-dark transition duration-200">Ver Produto</a>
+                    </div>
+                </div>
+
+                <!-- Produto: Flores de Cabelo -->
+                <div class="bg-moss-green shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200">
+                    <img src="https://placehold.co/600x400/A0A891/4A7C59?text=Flores+de+Cabelo" alt="Imagem de Flores de Cabelo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-2">Flores de Cabelo</h3>
+                        <p class="text-dark-gray mb-4 text-sm">Para Pombogiras e Ciganas. Duração de 48h. Criadas com muito carinho e amor para as moças. Feitas 100% à mão, com fita de cetim, bico de pato e folha de EVA. As ciganas incluem passamanaria com moedas ciganas.</p>
+                        <a href="#" class="inline-block primary-accent text-white px-6 py-2 rounded-lg font-medium hover:primary-accent-dark transition duration-200">Ver Produto</a>
+                    </div>
+                </div>
+
+                <!-- Produto: Kits de Trabalhos -->
+                <div class="bg-moss-green shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200">
+                    <img src="https://placehold.co/600x400/A0A891/4A7C59?text=Kits+de+Trabalhos" alt="Imagem de Kits de Trabalhos" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-2">Kits de Trabalhos</h3>
+                        <p class="text-dark-gray mb-4 text-sm">KIT Cambono (básico para iniciantes: ECOBAG, caneta, caderno, isqueiro, vela de brinde). KIT Macumba (para místicos: ecobag, caneta, caderno, maçarico, incenso, erva, alfazema, vela de brinde).</p>
+                        <a href="#" class="inline-block primary-accent text-white px-6 py-2 rounded-lg font-medium hover:primary-accent-dark transition duration-200">Ver Produto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção do Gerador de Orações ✨ -->
+        <section id="prayer-generator" class="w-full max-w-4xl bg-moss-green shadow-lg rounded-xl p-6 mb-12 border border-light-green text-center">
+            <h2 class="section-title">✨ Gerador de Orações e Reflexões</h2>
+            <p class="text-dark-gray text-md text-center mb-6">Introduza uma palavra-chave para gerar uma oração ou reflexão espiritual personalizada.</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                <input type="text" id="prayerKeyword" placeholder="Ex: Paz, Gratidão, Força" class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-accent">
+                <button id="generatePrayerBtn" class="primary-accent text-white px-6 py-3 rounded-lg font-medium hover:primary-accent-dark transition duration-200 flex items-center justify-center">
+                    Gerar Oração ✨
+                </button>
+            </div>
+
+            <div id="loadingSpinner" class="hidden flex justify-center items-center mb-4">
+                <div class="spinner"></div>
+                <p class="ml-3 text-dark-gray">A gerar oração...</p>
+            </div>
+
+            <div id="prayerResult" class="bg-moss-green p-6 rounded-lg border border-gray-200 text-dark-gray leading-relaxed text-center min-h-[100px] flex items-center justify-center">
+                <p>A sua oração ou reflexão gerada aparecerá aqui.</p>
+            </div>
+
+            <div id="errorMessage" class="hidden text-red-600 text-center mt-4">
+                Ocorreu um erro ao gerar a oração. Por favor, tente novamente.
+            </div>
+        </section>
+
+        <!-- Secção de Contacto -->
+        <section id="contact" class="w-full max-w-4xl bg-moss-green shadow-lg rounded-xl p-8 mb-12 border border-light-green text-center">
+            <h2 class="section-title">CONTACTO</h2>
+            <p class="text-dark-gray text-lg mb-6">Entre em contacto se tiver perguntas.</p>
+            <div class="flex flex-col items-center gap-4">
+                <p class="text-dark-gray text-xl font-semibold">Telefone: <a href="tel:+551234567890" class="text-primary-accent hover:underline">(12) 3456-7890</a></p>
+                <p class="text-dark-gray text-xl font-semibold">E-mail: <a href="mailto:ola@grandesite.com.br" class="text-primary-accent hover:underline">ola@grandesite.com.br</a></p>
+                <p class="text-dark-gray text-xl font-semibold">Site: <a href="http://www.grandesite.com.br" target="_blank" class="text-primary-accent hover:underline">www.grandesite.com.br</a></p>
+            </div>
+            <p class="text-2xl font-bold text-dark-gray mt-8">OBRIGADA!</p>
+            <p class="text-dark-gray mt-4 italic">"FLORESÇA ONDE ESTÁ PLANTADO."</p>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="w-full max-w-4xl mt-10 text-center text-dark-gray text-sm">
+            <p>&copy; 2025 Morada do Axé Artigos Religiosos. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Prayer Generator Logic
+            const generatePrayerBtn = document.getElementById('generatePrayerBtn');
+            const prayerKeywordInput = document.getElementById('prayerKeyword');
+            const prayerResultDiv = document.getElementById('prayerResult');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const errorMessageDiv = document.getElementById('errorMessage');
+
+            generatePrayerBtn.addEventListener('click', async () => {
+                const keyword = prayerKeywordInput.value.trim();
+                if (!keyword) {
+                    prayerResultDiv.innerHTML = '<p class="text-red-500">Por favor, introduza uma palavra-chave.</p>';
+                    errorMessageDiv.classList.add('hidden');
+                    return;
+                }
+
+                // Limpar resultados anteriores e mostrar spinner
+                prayerResultDiv.innerHTML = '';
+                errorMessageDiv.classList.add('hidden');
+                loadingSpinner.classList.remove('hidden');
+
+                try {
+                    // A reza fixa que sempre aparecerá no início
+                    const fixedPrayerStart = "Invoco nosso Deus, nosso Pai, seus divinos tronos, seus tronos regentes, senhores guardiões da Lei Maior da Justiça Divina";
+                    
+                    // O prompt para o LLM, pedindo apenas a parte da oração baseada na palavra-chave
+                    const prompt = `Gere uma breve oração ou reflexão espiritual sobre o tema: ${keyword}. A oração deve ser inspiradora e ter no máximo 50 palavras. Não inclua nenhuma frase de invocação no início.`;
+
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // A chave da API será fornecida em tempo de execução
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const generatedText = result.candidates[0].content.parts[0].text;
+                        // Concatenar a reza fixa com o texto gerado pelo LLM
+                        prayerResultDiv.innerHTML = `<p>${fixedPrayerStart} ${generatedText}</p>`;
+                    } else {
+                        prayerResultDiv.innerHTML = '<p class="text-red-500">Não foi possível gerar uma oração. Tente uma palavra-chave diferente.</p>';
+                        errorMessageDiv.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    console.error('Erro ao chamar a API Gemini:', error);
+                    prayerResultDiv.innerHTML = '<p class="text-red-500">Ocorreu um erro ao gerar a oração. Por favor, tente novamente.</p>';
+                    errorMessageDiv.classList.remove('hidden');
+                } finally {
+                    loadingSpinner.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
